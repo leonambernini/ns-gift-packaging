@@ -173,7 +173,7 @@ No arquivo store.js.tpl iremos inserir o script que irá fazer o controle dos pr
     $(document).on('DOMNodeInserted DOMNodeRemoved', '.js-ajax-cart-list', function() {
         setTimeout( function(){
             ajustGiftPackagingActions();
-        }, 1000);
+        }, 500);
     });
     setTimeout( function(){
         ajustGiftPackagingActions();

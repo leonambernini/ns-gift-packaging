@@ -117,7 +117,7 @@ $(document).ready(function(){
         $(document).on('DOMNodeInserted DOMNodeRemoved', '.js-ajax-cart-list', function() {
             setTimeout( function(){
                 ajustGiftPackagingActions();
-            }, 1000);
+            }, 500);
         });
         setTimeout( function(){
             ajustGiftPackagingActions();
