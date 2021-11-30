@@ -35,10 +35,12 @@ O código deve ser instalado via FTP atualizando alguns dos arquivos .tpl padrõ
 - 3. static/js/store.js.tpl
 - 4. snipplets/cart-item-ajax.tpl
 - 5. snipplets/cart-totals.tpl
+- 6. snipplets/grid/item.tpl
+- 7. snipplets/header/header-search-results.tpl
 
 Além das alterações é necessário criar um arquivo na pasta **snipplets** chamado **gift-packaging.tpl**
 
-- 6. snipplets/gift-packaging.tpl
+- 8. snipplets/gift-packaging.tpl
 
 
 ## 1. config/settings.txt
@@ -225,6 +227,46 @@ E para que tudo funcione corretamente, crie um arquivo na pasta **snipplets** ch
         <button class="js-lb-gift-packaging-add btn btn-secondary btn-small w-100">{{ gift_packaging_msg_cta }}</button>
     </div>
 
+{% endif %}
+```
+
+
+# Opcional: Esconder brinde das listagens da loja
+
+Para esconder o produto "embalagem" das listas é necessário realizar as seguintes alterações:
+
+## 6. snipplets/grid/item.tpl
+
+No arquivo `snipplets/grid/item.tpl` adicione a seguinte validação logo na primeira linha do arquivo
+
+```twig
+{# Gift Packaging - Leonam Bernini #}
+{% set is_gift_item =  settings.lb_gift_packaging and product.id == settings.lb_gift_packaging_product %}
+
+{% if not is_gift_item %}
+```
+
+E feche o **IF** na última linha do arquivo, mantendo todo o código atual dentro do if:
+
+```twig
+{% endif %}
+```
+
+## 7. snipplets/header/header-search-results.tpl
+
+O mesmo vale para os itens do resultado de busca, a diferença que este código deve ser inserido logo após o código `{% for product in search_suggestions %}`, responsável pelo ‘looping’ dos produtos buscados.
+
+Cole o seguinte código antes da lista `<li class="search-suggest-item container-fluid">`
+```twig
+{# Gift Packaging - Leonam Bernini #}
+{% set is_gift_item =  settings.lb_gift_packaging and product.id == settings.lb_gift_packaging_product %}
+
+{% if not is_gift_item %}
+```
+
+E feche o **IF** logo após o fechamento da lista `</li>`
+
+```twig
 {% endif %}
 ```
 
