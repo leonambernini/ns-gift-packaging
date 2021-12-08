@@ -5,6 +5,15 @@ Para a utilização deste recurso o lojista precisa realizar o cadastro de um "p
 
 Ex: Embalagem para presente, Embalagem especial, Embalagem discreta, etc.
 
+## Exemplo
+
+[Loja de Demonstração](https://embalagemespecial.lojavirtualnuvem.com.br).
+
+
+![image](https://user-images.githubusercontent.com/49003144/145153611-3ab60fe1-3b07-4589-b56c-1c0463edf628.png)
+![image](https://user-images.githubusercontent.com/49003144/145153542-18bc2048-af0d-4460-8756-768fcfec01ea.png)
+
+
 # Configurações e personalização no painel
 
 - **Habilitar opção de embalagem no carrinho?**
